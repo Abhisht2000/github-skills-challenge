@@ -2,8 +2,10 @@ name: Python Coverage
 
 on:
   pull_request:
+    types: [opened, synchronize, reopened]
     branches:
       - main
+# Run this workflow whenever a PR targets main and the branch has new commits.
 
 permissions:
   contents: read
