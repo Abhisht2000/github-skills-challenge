@@ -30,4 +30,5 @@ jobs:
         env:
           PYTHONPATH: .
         run: |
+          # Run the project test suite and produce detailed coverage output.
           pytest --cov=src --cov-report=term-missing -vv
