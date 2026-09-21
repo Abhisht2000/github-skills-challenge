@@ -5,7 +5,7 @@ on:
     types: [opened, synchronize, reopened]
     branches:
       - main
-# Run this workflow whenever a PR targets main and the branch has new commits.
+# sdsRun this workflow whenever a PR targets main and the branch has new commits.
 
 permissions:
   contents: read
@@ -35,7 +35,9 @@ jobs:
       - name: Run tests and generate coverage details
         env:
           PYTHONPATH: .
-        run: pytest --cov=src --cov-report=term-missing --cov-report=xml
+        run: |
+          # Generate the XML and terminal coverage reports for PR validation.
+          pytest --cov=src --cov-report=term-missing --cov-report=xml
 
       - name: Coverage comment
         uses: py-cov-action/python-coverage-comment-action@v3
